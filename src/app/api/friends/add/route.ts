@@ -11,8 +11,6 @@ export async function POST(req: Request) {
 
     const { email: emailToAdd } = addFriendValidator.parse(body.email);
 
-    console.log("get id", emailToAdd);
-
     const RESTResponse = await fetch(
       `${process.env.UPSTASH_REDIS_REST_URL}/get/user:email:${emailToAdd}`,
       {
@@ -23,7 +21,7 @@ export async function POST(req: Request) {
       }
     );
 
-    const data = (await RESTResponse.json()) as { result: string };
+    const data = (await RESTResponse.json()) as { result: string | null };
 
     const idToAdd = data.result;
     if (!idToAdd) {
