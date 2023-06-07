@@ -10,7 +10,7 @@ import { fetchRedis } from "@/helpers/redis";
 import { getFriendsByUserId } from "@/helpers/get-friends-by-user-id";
 import SidebarChatList from "@/components/SidebarChatList";
 import MobileChatLayout from "@/components/MobileChatLayout";
-import { Icon, Icons } from "@/components/Icons";
+import { Icon, Icons } from "@/components/icons";
 
 interface LayoutProps {
   children: ReactNode;
